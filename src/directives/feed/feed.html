@@ -1,0 +1,16 @@
+<section>
+    <div class="new-todo" style="cursor: pointer;" ng-click="feedsActive = !feedsActive">
+        <p ng-bind-html="feeds.feed.description"></p>
+    </div>
+    <ul ng-show="feedsActive === true">
+        <li ng-repeat="(key, feed) in feeds.items">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <span style="cursor: pointer;" ng-click="feedActive[key]= !feedActive[key]" ><i>{{ feed.pubDate | dateFormat }}</i> - <strong ng-bind-html="feed.title"></strong></span>
+                    <div ng-bind-html="feed.content" ng-show="feedActive[key] === true"></div>
+                    <a href="{{ feed.link }}" target="_BLANK">Site</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>

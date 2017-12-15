@@ -1,0 +1,14 @@
+<section>
+  <article ng-show="filactus.length">
+    <ul>
+      <li ng-repeat="filactu in filactus" class="ligne-param"> 
+        <bloc-affichage url="filactu"></bloc-affichage>
+      </li>
+    </ul>
+  </article>
+  <div class="col-md-4">
+    <form ng-submit="addfilactu()">
+      <input class="new-todo" type="text" ng-model="newfilactu" placeholder="Entrer une URL">
+    </form>
+  </div>
+</section>

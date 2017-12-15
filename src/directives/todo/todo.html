@@ -1,0 +1,22 @@
+<section>
+    <form ng-submit="addTodo()">
+        <input class="new-todo" type="text" ng-model="newTodo" placeholder="Que souhaitez vous faire ?">  
+    </form>
+   <article ng-show="todos.length">
+    <ul>
+        <li ng-repeat="todo in todos" ng-class="{completed:todo.completed}" >
+            <input class="mark" type="checkbox" ng-model="todo.completed">
+            <span>{{ todo.title }}</span>
+            <span class="close" ng-click="removeTodo(todo)">x</span>
+        </li>
+        <li>
+            <span>Nombre d'éléments : {{todos.length}}</span>
+        </li>
+        <li >
+            <input type="button" value="{{completed? 'Tout décocher': 'Tout cocher'}}"  ng-click="markAll()">
+            <input type="button" value="Supprimer les tâches cochées" ng-click="clearCompleted()" >
+        </li>
+    </ul>
+    </article>
+</section>
+
